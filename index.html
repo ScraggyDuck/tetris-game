@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <style>
+        body {
+            background: url('./bg.png') #000;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @font-face {
+            font-family: 'Pixel';
+            src: url('./Pixel-LCD-7.woff') format('woff');
+        }
+
+        .tetris-container {
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            margin-right: 50px;
+        }
+
+        .player-score,
+        .rows,
+        .level {
+            color: #999;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            border: 4px solid #333;
+            min-height: 30px;
+            width: 100%;
+            border-radius: 20px;
+            background: #000;
+            font-family: Pixel,
+                Arial,
+                Helvetica,
+                sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .help {
+            color: #999;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            border: 4px solid #333;
+            min-height: 30px;
+            width: 100%;
+            border-radius: 20px;
+            background: #000;
+            font-family: Pixel,
+                Arial,
+                Helvetica,
+                sans-serif;
+            font-size: 1rem;
+            margin-left: 50px;
+        }
+
+        .help div {
+            margin-bottom: 20px;
+        }
+
+        .stage {
+            border: 4px solid #333;
+            border-radius: 3px;
+            box-shadow: 0px 1px 7px 1px;
+        }
+
+        #startBtn {
+            box-sizing: border-box;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            min-height: 30px;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            background: #333;
+            font-family: Pixel, Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            min-width: 160px;
+            width: 100%;
+        }
+
+        #startBtn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tetris-container">
+        <div class="sidebar">
+            <div class="player-score">Score: <span id="score"></span></div>
+            <div class="rows">Rows: <span id="rows"></span></div>
+            <div class="level">Level: <span id="level"></span></div>
+            <div id="startBtn">Start Game</div>
+        </div>
+        <canvas class="stage" id="tetris" width="240" height="400"></canvas>
+        <div class="help">
+            <div>HELP</div>
+            <div>Arrow right: Move right</div>
+            <div>Arrow left: Move left</div>
+            <div>Arrow up: rotate</div>
+            <div>Arrow down: Move down</div>
+            <div>Space: Move down bottom</div>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+
+</html>
